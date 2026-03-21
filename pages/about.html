@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - K G Bhut & Associates | Leading CA Firm Since 2010</title>
+    <meta
+      name="description"
+      content="Learn about K. G. Bhut & Associates, a trusted CA firm helping businesses with accounting, taxation, compliance, and strategic financial advisory since 2010."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://atel1407.github.io/pages/about.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Us - K G Bhut & Associates" />
+    <meta
+      property="og:description"
+      content="Meet the team, mission, and expertise behind K. G. Bhut & Associates."
+    />
+    <meta property="og:url" content="https://atel1407.github.io/pages/about.html" />
+    <meta property="og:image" content="https://atel1407.github.io/images/about-hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Us - K G Bhut & Associates" />
+    <meta
+      name="twitter:description"
+      content="Meet the team, mission, and expertise behind K. G. Bhut & Associates."
+    />
+    <meta name="twitter:image" content="https://atel1407.github.io/images/about-hero.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About K. G. Bhut & Associates",
+        "url": "https://atel1407.github.io/pages/about.html",
+        "description": "Company overview, mission, vision, and industry expertise."
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/index.js" defer></script>
+  </head>
+  <body class="about-page bg-white text-gray-900 min-h-screen overflow-x-hidden">
+    <header
+      id="main-header"
+      class="transition-colors duration-300 absolute top-0 left-0 w-full z-50 bg-transparent"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+        <nav
+          class="flex items-center justify-between rounded-full bg-white/90 shadow-md px-6 py-3 backdrop-blur"
+        >
+          <!-- Brand -->
+          <div class="flex items-center gap-2">
+             <div class="flex h-9 w-9 items-center justify-center rounded-full overflow-hidden">
+              <img src="../images/New CA Logo!.jpg" alt="KG" class="w-full h-full object-cover" />
+            </div>
+            <span
+              class="text-lg font-semibold tracking-tight text-gray-900"
+              id="brand"
+              >K. G. Bhut &amp; Associates</span
+            >
+          </div>
+
+          <!-- Desktop nav -->
+          <ul
+            class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-800"
+            id="nav-menu"
+          >
+            <li>
+              <a
+                href="../index.html"
+                class="nav-link relative transition-colors duration-300"
+                >HOME</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="nav-link relative transition-colors duration-300"
+                >ABOUT</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="nav-link relative transition-colors duration-300"
+                >SERVICES</a
+              >
+            </li>
+            <li>
+              <a
+                href="../index.html#case-study"
+                class="nav-link relative transition-colors duration-300"
+                >CASE STUDY</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://medium.com/@kgbhut"
+                target="_blank"
+                rel="noopener"
+                class="nav-link relative transition-colors duration-300"
+                >BLOG</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                href="contact.html"
+                class="nav-link relative transition-colors duration-300"
+                >CONTACT</a
+              >
+            </li> -->
+          </ul>
+
+          <!-- Right: CTA (desktop) -->
+          <div class="hidden md:flex items-center gap-4">
+            <a
+              href="contact.html"
+              class="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 text-sm font-semibold text-white shadow-md hover:bg-gray-900"
+            >
+              <span>Get In Touch</span>
+              <span
+                class="flex h-6 w-6 items-center justify-center rounded-full bg-white/20"
+              >
+                →
+              </span>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </nav>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white transition-colors duration-300 px-6 pb-4"
+      >
+        <ul class="flex flex-col gap-4 font-semibold">
+          <li>
+            <a
+              href="../index.html"
+              class="nav-link-mobile transition-colors duration-300"
+              >HOME</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="nav-link-mobile transition-colors duration-300"
+              >ABOUT</a
+            >
+          </li>
+          <li>
+            <a
+              href="services.html"
+              class="nav-link-mobile transition-colors duration-300"
+              >SERVICES</a
+            >
+          </li>
+          <li>
+            <a
+              href="../index.html#case-study"
+              class="nav-link-mobile transition-colors duration-300"
+              >CASE STUDY</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://medium.com/@kgbhut"
+              target="_blank"
+              rel="noopener"
+              class="nav-link-mobile transition-colors duration-300"
+              >BLOG</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="nav-link-mobile transition-colors duration-300"
+              >CONTACT</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section
+      class="relative min-h-screen -mt-28 flex items-center justify-center overflow-hidden bg-black"
+    >
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="
+          background-image: url('../images/about-hero.jpg');
+          background-size: cover;
+          background-position: center center;
+          will-change: transform;
+        "
+        id="about-hero-bg"
+      ></div>
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <div
+        class="relative z-10 flex items-center min-h-[calc(100vh-8rem)] w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-left"
+      >
+        <div class="hero-content max-w-2xl mt-28 sm:mt-32 md:mt-0">
+          <h1
+            class="hero-heading about-hero-title font-serif italic text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.1] tracking-[0.02em] text-white mb-6 break-words"
+            style="font-family: 'Playfair Display', Georgia, serif;"
+          >
+            <span class="block">ABOUT</span>
+            <span class="block about-hero-title-frost md:whitespace-nowrap">K.G. BHUT &amp; ASSOCIATES</span>
+          </h1>
+          <p class="hero-subheading text-white/95 text-sm sm:text-base md:text-lg w-full mb-6 sm:mb-8 leading-relaxed break-words">
+            We deliver trusted financial and business advisory through expertise, integrity, and innovation.
+          </p>
+          <div class="hero-cta flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
+            <a
+              href="contact.html"
+              class="inline-flex items-center justify-center rounded-full bg-black px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors text-center"
+            >
+              <span>Get consultation</span>
+              <span class="ml-2" aria-hidden="true">→</span>
+            </a>
+            <a
+              href="services.html"
+              class="inline-flex items-center justify-center rounded-full bg-white/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-gray-900 shadow-md hover:bg-white transition-colors text-center"
+            >
+              View services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats: single rounded container just below hero -->
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 -mt-8 relative z-10">
+      <div class="rounded-2xl border border-gray-200/80 bg-white shadow-lg p-6 sm:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6">
+          <div class="text-center p-5 sm:p-6 bg-[#A6D6D6] rounded-xl shadow-sm">
+            <div class="text-3xl sm:text-4xl font-bold text-[#333446] mb-2 counter">500</div>
+            <div class="text-gray-700 text-sm sm:text-base">Happy Clients</div>
+          </div>
+          <div class="text-center p-5 sm:p-6 bg-[#A6D6D6] rounded-xl shadow-sm">
+            <div class="text-3xl sm:text-4xl font-bold text-[#333446] mb-2 counter">9</div>
+            <div class="text-gray-700 text-sm sm:text-base">Years Experience</div>
+          </div>
+          <div class="text-center p-5 sm:p-6 bg-[#A6D6D6] rounded-xl shadow-sm">
+            <div class="text-3xl sm:text-4xl font-bold text-[#333446] mb-2 counter">15</div>
+            <div class="text-gray-700 text-sm sm:text-base">Team Members</div>
+          </div>
+          <div class="text-center p-5 sm:p-6 bg-[#A6D6D6] rounded-xl shadow-sm">
+            <div class="text-3xl sm:text-4xl font-bold text-[#333446] mb-2 counter">3</div>
+            <div class="text-gray-700 text-sm sm:text-base">Office Locations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="mx-auto max-w-7xl w-full overflow-x-hidden px-4 sm:px-6 py-8 grid gap-16">
+      <!-- Company Overview – layout like reference image -->
+      <section class="company-overview mx-auto w-full bg-[#EAEFEF] rounded-3xl px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
+        <div class="grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,0.9fr)] gap-10 lg:gap-12 items-start">
+          <!-- Left: label, heading, smaller image -->
+          <div class="space-y-6 text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start gap-2">
+              <span class="text-xs sm:text-sm font-semibold text-[#7F8CAA] uppercase tracking-[0.2em]">About Us</span>
+            </div>
+            <h2 class="section-heading text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-[#333446] leading-tight">
+              <span class="md:whitespace-nowrap">Accounting That Moves</span><br />Businesses Forward
+            </h2>
+            <div class="overflow-hidden rounded-2xl shadow-lg max-w-xs mx-auto md:mx-0">
+              <div class="relative aspect-[3/4] bg-[#B8CFCE]">
+                <img
+                  src="../images/about.jpg"
+                  alt="K.G. Bhut &amp; Associates team with client"
+                  class="w-full h-full object-cover object-top"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#333446] via-transparent to-transparent opacity-70"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Middle: intro text + logo centered between paragraphs -->
+          <div class="space-y-6 mt-12 md:mt-24 lg:mt-48 text-center md:text-left">
+            <p class="section-subheading text-[#333446] text-sm sm:text-base leading-relaxed">
+              At our core, we're not just accountants—we're strategic partners committed to your financial
+              success. With precision, insight, and years of experience.
+            </p>
+            <div class="flex justify-center">
+              <div class="flex h-28 w-28 sm:h-32 sm:w-32 items-center justify-center rounded-full bg-white shadow-lg">
+                <img
+                  src="../images/New CA Logo!.jpg"
+                  alt="K.G. Bhut &amp; Associates logo"
+                  class="h-20 sm:h-24 w-auto object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: 9+ stat and larger image -->
+          <div class="space-y-4 text-center md:text-left">
+            <div>
+              <p class="text-4xl sm:text-5xl font-bold text-[#333446] leading-none">9+</p>
+              <p class="text-sm font-medium text-[#7F8CAA] mt-2">Years Of</p>
+              <p class="text-sm font-medium text-[#7F8CAA]">Pro Experience</p>
+            </div>
+            <div class="overflow-hidden rounded-2xl shadow-xl">
+              <div class="relative">
+                <img
+                  src="../images/about-section.jpeg"
+                  alt="Lead Chartered Accountant"
+                  class="w-full h-80 sm:h-96 object-cover object-center"
+                />
+                <div class="absolute bottom-0 left-0 right-0 px-4 py-3 sm:px-5 sm:py-4 bg-gradient-to-t from-[#333446] via-[#7F8CAA] to-transparent">
+                  <p class="font-semibold text-sm sm:text-base text-white">Khushbu G. Bhut</p>
+                  <p class="text-xs sm:text-sm text-[#EAEFEF]">Chartered Accountant</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom row: detailed text and CTA (stacked on mobile) -->
+        <div class="mt-8 md:-mt-16 flex justify-center md:justify-end">
+          <div class="space-y-6 max-w-3xl text-center md:text-left">
+            <p class="text-[#333446] text-sm sm:text-base leading-relaxed">
+              We exist to give ambitious businesses the financial clarity they need to lead with certainty. Our team
+              combines expertise with next-level technology to simplify complexity, uncover opportunities, and keep
+              you ahead of the curve. Because behind great business is an accountant who sees the full picture.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors"
+            >
+              <span aria-hidden="true">→</span>
+              <span>Get Started Today</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Vision & Mission – split layout -->
+      <section
+        class="mx-auto w-full rounded-3xl bg-[#333446] text-white px-6 sm:px-10 lg:px-16 py-12 lg:py-16 grid lg:grid-cols-[1.2fr,0.8fr] gap-10 lg:gap-14 items-center"
+      >
+        <!-- Left: Vision & Mission copy -->
+        <div class="space-y-6 text-center md:text-left">
+          <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-[#B8CFCE]"
+            >Our Vision &amp; Mission</span
+          >
+          <h2 class="section-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            Intersection of Vision<br />
+            and Trusted Financial Results.
+          </h2>
+          <p class="section-subheading text-sm sm:text-base text-[#EAEFEF] max-w-xl mx-auto md:mx-0">
+            We combine long-term strategic vision with day‑to‑day financial clarity so that every
+            decision you take is backed by insight, discipline, and measurable outcomes.
+          </p>
+
+          <div
+            class="mt-4 rounded-2xl bg-[#B8CFCE] text-[#333446] px-5 py-4 max-w-md mx-auto md:mx-0 shadow-lg flex flex-col gap-1 text-left"
+          >
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#333446]/80"
+              >Vision</span
+            >
+            <p class="text-sm leading-relaxed">
+              To be the leading accounting and business consultancy firm in India, recognized for
+              our innovative solutions, unwavering commitment to client success, and contribution
+              to the growth of businesses across all sectors.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 w-full max-w-none sm:max-w-md mx-auto md:mx-0">
+            <div class="text-center md:text-left">
+              <p class="text-3xl font-bold text-[#EAEFEF]">Our Mission</p>
+              <p class="mt-2 text-sm text-[#B8CFCE] leading-relaxed">
+                To empower businesses with comprehensive financial solutions, strategic guidance,
+                and compliance support that enable sustainable, confident growth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Image with compact business card (overlapping on md+, stacked on mobile) -->
+        <div class="relative w-full max-w-md mx-auto mt-10 md:mt-0">
+          <div class="overflow-hidden rounded-3xl shadow-2xl h-64 sm:h-80 md:h-96">
+            <img
+              src="../images/about-section 1.jpg"
+              alt="Client discussing strategy with advisor"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div
+            class="mt-5 md:mt-0 md:absolute md:-bottom-10 md:right-6 w-full max-w-xs bg-[#EAEFEF] text-[#333446] rounded-2xl shadow-xl p-4 sm:p-5"
+          >
+            <h3 class="text-sm font-semibold mb-1">Our Business Promise</h3>
+            <p class="text-xs text-[#7F8CAA] mb-3 leading-relaxed">
+              Clarity in numbers. Confidence in decisions. Consistency in results.
+            </p>
+            <ul class="space-y-1 text-xs text-[#333446]">
+              <li>• Proactive advisory, not just compliance</li>
+              <li>• Transparent reporting and communication</li>
+              <li>• Long‑term partnerships focused on growth</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us – separate section -->
+      <section class="mt-16 mx-auto w-full rounded-3xl bg-[#333446] text-white px-6 sm:px-10 lg:px-16 py-10 shadow-xl">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+          <h2 class="section-heading text-3xl sm:text-4xl font-bold leading-tight text-center md:text-left">Why Choose Us</h2>
+          <p class="section-subheading text-sm sm:text-base text-[#B8CFCE] max-w-2xl w-full mx-auto md:mx-0 text-center md:text-left">
+            We provide the best services for your business needs with proven expertise and
+            a client-first mindset.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Expert Team -->
+          <div class="bg-[#EAEFEF] rounded-2xl p-5 shadow-md text-[#333446]">
+            <h3 class="text-base font-semibold mb-1">Expert Team</h3>
+            <p class="text-sm text-[#7F8CAA] leading-snug">
+              Qualified CAs and financial experts with 13+ years of experience.
+            </p>
+          </div>
+          <!-- Client-Centric -->
+          <div class="bg-[#EAEFEF] rounded-2xl p-5 shadow-md text-[#333446]">
+            <h3 class="text-base font-semibold mb-1">Client-Centric Approach</h3>
+            <p class="text-sm text-[#7F8CAA] leading-snug">
+              Customized solutions for your unique business requirements.
+            </p>
+          </div>
+          <!-- Innovative Solutions -->
+          <div class="bg-[#EAEFEF] rounded-2xl p-5 shadow-md text-[#333446]">
+            <h3 class="text-base font-semibold mb-1">Innovative Solutions</h3>
+            <p class="text-sm text-[#7F8CAA] leading-snug">
+              Technology and best practices for efficient financial solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="industry-expertise mt-16 mx-auto w-full">
+        <div class="mb-8 text-center md:text-left">
+          <h2 class="section-heading text-3xl sm:text-4xl font-bold leading-tight text-[#333446] mb-4">
+            Industry Expertise
+          </h2>
+          <p class="section-subheading text-gray-600">
+            We serve diverse industries with specialized knowledge and tailored
+            solutions
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Manufacturing</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">IT &amp; Software</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Real Estate</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Healthcare</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Retail &amp; E-commerce</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Startups &amp; SMEs</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Education &amp; EdTech</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Hospitality &amp; Tourism</span>
+          <!-- <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Logistics &amp; Transportation</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Media &amp; Entertainment</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Agriculture &amp; AgriTech</span> -->
+        </div>
+      </section>
+
+    
+      <!-- Our Process -->
+<section class="our-process bg-[#EAEFEF] py-16 mx-0 md:-mx-6 px-6 rounded-3xl">
+  <div class="max-w-6xl mx-auto grid gap-10 lg:gap-16 lg:grid-cols-2 items-center">
+    <!-- Left: numbered cards -->
+    <div class="text-center md:text-left">
+      <span class="text-[#7F8CAA] font-semibold tracking-wide uppercase mb-2 block">
+        How We Work
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold leading-tight text-[#333446] mb-4">
+        Our Process
+      </h2>
+      <p class="text-gray-600 text-sm sm:text-base max-w-xl mb-8">
+        A systematic approach to delivering exceptional results through
+        proven methodologies and client-focused strategies.
+      </p>
+
+      <div class="space-y-4">
+        <!-- Step 1 -->
+        <div class="flex items-start gap-4 rounded-2xl bg-[#333446] text-white p-5 shadow-lg">
+          <div class="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#333446] font-semibold">
+            1
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-semibold mb-1">
+              Discovery &amp; Analysis
+            </h3>
+            <p class="text-xs sm:text-sm text-[#EAEFEF]">
+              Understanding your business goals and challenges through
+              comprehensive consultations and financial analysis.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex items-start gap-4 rounded-2xl bg-white p-5 shadow-md">
+          <div class="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-[#B8CFCE] text-[#333446] font-semibold">
+            2
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-semibold mb-1">
+              Strategy Development
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600">
+              Developing customized strategies and solutions tailored to your
+              specific business needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex items-start gap-4 rounded-2xl bg-white p-5 shadow-md">
+          <div class="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-[#B8CFCE] text-[#333446] font-semibold">
+            3
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-semibold mb-1">
+              Implementation
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600">
+              Executing strategies with precision and seamless integration
+              with your existing processes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex items-start gap-4 rounded-2xl bg-white p-5 shadow-md">
+          <div class="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-[#B8CFCE] text-[#333446] font-semibold">
+            4
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-semibold mb-1">
+              Monitoring &amp; Optimization
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600">
+              Continuous monitoring and optimization to ensure long-term
+              effectiveness and business growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: image like reference -->
+    <div class="mt-10 lg:mt-0">
+      <div class="overflow-hidden rounded-3xl shadow-2xl">
+        <img
+          src="../images/about-section 1.jpg"
+          alt="Team collaborating in modern office"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+    </main>
+    <footer class="mt-16 overflow-hidden bg-[#0f1816] pb-6">
+      <div class="bg-[#1a2e2a] text-white pt-12 pb-10 rounded-b-[4rem]">
+        <div
+          class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10"
+        >
+          <!-- About Us -->
+          <div>
+            <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
+            <p class="mb-4 text-white/90 text-sm leading-relaxed">
+            K.G. Bhut & Associates is a leading accounting and business
+            consultancy firm providing comprehensive financial solutions since
+            2010.
+          </p>
+          <div class="flex gap-3">
+            <a
+              href="https://medium.com/@kgbhut"
+              target="_blank"
+              rel="noopener"
+              class="w-9 h-9 flex items-center justify-center rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors"
+            ><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 5H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 9h10M7 13h6" />
+              </svg
+            ></a>
+          </div>
+        </div>
+        <!-- Services -->
+        <div>
+          <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">SERVICES</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="./pages/services.html"
+                class="text-white/90 hover:text-white transition-colors text-sm"
+                >Accounting Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="./pages/services.html"
+                class="text-white/90 hover:text-white transition-colors text-sm"
+                >Tax Planning & Compliance</a
+              >
+            </li>
+            <li>
+              <a
+                href="./pages/services.html"
+                class="text-white/90 hover:text-white transition-colors text-sm"
+                >Business Consultancy</a
+              >
+            </li>
+            <li>
+              <a
+                href="./pages/services.html"
+                class="text-white/90 hover:text-white transition-colors text-sm"
+                >Financial Advisory</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Discover -->
+        <div>
+          <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">DISCOVER</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="./pages/about.html"
+                class="text_WHITE/90 hover:text-white transition-colors text-sm"
+                >About us</a
+              >
+            </li>
+            <li>
+              <a
+                href="./pages/contact.html"
+                class="text_WHITE/90 hover:text-white transition-colors text-sm"
+                >Contact us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-white/90 hover:text_WHITE transition-colors text-sm"
+                >Terms & Conditions</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-white/90 hover:text-white transition-colors text-sm"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="bg-[#0f1816] py-7">
+        <div class="max-w-7xl mx-auto px-6 text-center text-white/70 text-xs">
+          Copyright ©2025 All rights reserved by
+          <a href="#" class="text-white hover:underline">K G BHUT & Associates</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
