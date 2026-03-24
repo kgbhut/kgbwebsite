@@ -272,25 +272,25 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       const testimonials = [
         {
-          name: "Rajesh Patel",
-          role: "CEO, TechnoSoft Solutions",
-          text: "K.G. Bhut & Associates has been handling our tax and accounting work for years. Their professionalism and timely support have helped us maintain perfect compliance without stress.",
+          name: "Apurva Singh",
+          role: "Software Developer, Bengaluru",
+          text: "Khushbu is very experienced in her work. Explains things clearly and always gives positive results and gains. One of the best experiences I've had. Handled my ITR filing with utmost accuracy, guided me throughout, and was always available for clarifications. Her expertise and supportive nature make her highly trustworthy. Highly recommend her.",
           image: "./images/about.jpg",
           rating: 5,
         },
         {
-          name: "Priya Sharma",
-          role: "Founder, Green Earth Enterprises",
-          text: "Professional, reliable, and always available when we need them. Their business consultancy helped us expand our operations successfully.",
+          name: "Bhaskar Kumar",
+          role: "Security Consultant, Gurugram",
+          text: "Got seamless support for Personalised tax planning and ITR filing. Thanks a lot!",
           image: "./images/about.jpg",
           rating: 5,
         },
         {
-          name: "Amit Kumar",
-          role: "Director, Kumar Industries",
+          name: "Vivek Patel",
+          role: "Product Engineer, Pune",
           text: "Exceptional service and attention to detail. They handle all our compliance requirements efficiently, allowing us to focus on growing our business.",
           image: "./images/about.jpg",
-          rating: 4,
+          rating: 5,
         },
       ];
 
