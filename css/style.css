@@ -1,5 +1,10 @@
-/* Enhanced styles for K.G. Bhut & Associates with GSAP animations */
+/* ========================================
+   K.G. Bhut & Associates - Main Stylesheet
+   ======================================== */
 
+/* ========================================
+   1) Base / Reset
+   ======================================== */
 /* Ensure all content is visible by default - NO OPACITY RULES */
 * {
   opacity: 1 !important;
@@ -55,6 +60,9 @@ h2,
   background-color: #16a34a;
 }
 
+/* ========================================
+   2) Header & Navigation
+   ======================================== */
 /* Header styles – transparent so hero shows behind */
 #main-header {
   backdrop-filter: blur(10px);
@@ -313,6 +321,9 @@ h2,
   }
 }
 
+/* ========================================
+   3) Generic Components & Utilities
+   ======================================== */
 /* Card hover effects */
 .service-card,
 .feature-card,
@@ -418,6 +429,9 @@ html {
   background: #15803d;
 }
 
+/* ========================================
+   4) Contact Form
+   ======================================== */
 /* Contact form – glassmorphism container */
 .form-glass {
   background: rgba(231, 242, 239, 0.65);
@@ -487,6 +501,9 @@ nav {
   visibility: visible !important;
 }
 
+/* ========================================
+   5) About Page - Process Section
+   ======================================== */
 /* Enhanced Process Section Styles */
 .our-process {
   position: relative;
@@ -596,9 +613,9 @@ nav {
 .process-step-mobile:nth-child(5) { animation-delay: 0.3s; }
 .process-step-mobile:nth-child(7) { animation-delay: 0.4s; }
 
-/* ============================
-   Modern SaaS Hero Layout
-   ============================ */
+/* ========================================
+   6) Hero Layout & Animations
+   ======================================== */
 
 .hero-section {
   padding: 60px 24px 40px;
@@ -787,6 +804,9 @@ nav {
   }
 }
 
+/* ========================================
+   7) Services Page - Expertise Marquee
+   ======================================== */
 /* Services page: Our Expertise infinite scroll rows */
 .expertise-row-wrap {
   overflow: hidden;
@@ -851,6 +871,9 @@ nav {
   }
 }
 
+/* ========================================
+   8) About Page - Industry Pills
+   ======================================== */
 /* About page: Industry Expertise scrollable pills */
 .industry-pills-wrap {
   position: relative;
@@ -887,6 +910,9 @@ nav {
   color: #ffffff !important;
 }
 
+/* ========================================
+   9) Services Page - Industries Stack
+   ======================================== */
 /* Industries We Serve: cards stack vertically on scroll */
 .industries-cards-stack {
   position: relative;
@@ -918,6 +944,9 @@ nav {
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
+/* ========================================
+   10) CTA Buttons
+   ======================================== */
 /* Services CTA section: outline button hover uses CTA color */
 .cta-outline-btn:hover {
   color: #708993 !important;
