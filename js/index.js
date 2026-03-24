@@ -401,8 +401,7 @@ document.addEventListener("DOMContentLoaded", function () {
           clearInterval(autoCaseTimer);
         }
         autoCaseTimer = setInterval(() => {
-          currentCaseIndex =
-            (currentCaseIndex + 1) % caseStudies.length;
+          currentCaseIndex = (currentCaseIndex + 1) % caseStudies.length;
           renderCase(currentCaseIndex);
         }, 6000);
       }
@@ -418,8 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       caseNext.addEventListener("click", () => {
-        currentCaseIndex =
-          (currentCaseIndex + 1) % caseStudies.length;
+        currentCaseIndex = (currentCaseIndex + 1) % caseStudies.length;
         renderCase(currentCaseIndex);
         startAutoCaseSlider();
       });

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -37,7 +37,6 @@
         "description": "Contact page for consultation and service inquiries."
       }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -45,6 +44,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../css/output.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/index.js" defer></script>
   </head>
@@ -60,7 +60,7 @@
           <!-- Brand -->
           <div class="flex items-center gap-2">
              <div class="flex h-9 w-9 items-center justify-center rounded-full overflow-hidden">
-              <img src="../images/New CA Logo!.jpg" alt="KG" class="w-full h-full object-cover" />
+              <img src="../images/New CA Logo!.jpg" alt="KG" width="36" height="36" class="w-full h-full object-cover" />
             </div>
             <span
               class="text-lg font-semibold tracking-tight text-gray-900"
@@ -232,7 +232,7 @@
           </p>
           <a
             href="#contact-form"
-            class="hero-cta inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors"
+            class="hero-cta inline-flex items-center gap-2 rounded-full border border-gray-400 bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors"
           >
             <span>Book a Consultation</span>
             <span aria-hidden="true">→</span>
@@ -290,8 +290,6 @@
             <form id="contact-form-el" class="space-y-5">
               <!-- Honeypot: hidden from humans, bots fill this -->
               <input type="text" name="honeypot" id="honeypot" style="display:none;" tabindex="-1" autocomplete="off" />
-              <!-- Hidden IP field -->
-              <input type="hidden" id="userIp" name="userIp" value="" />
               <div class="grid sm:grid-cols-2 gap-5">
                 <div>
                   <input
@@ -448,10 +446,12 @@
                 var icon    = document.getElementById("submit-icon");
                 var msg     = document.getElementById("form-msg");
 
+                var RATE_LIMIT_KEY = "kgbhut_last_submit";
+                var RATE_LIMIT_MS  = 10 * 60 * 1000; // 10 minutes
+
                 function clearErrors() {
                   msg.classList.add("hidden");
                   msg.textContent = "";
-                  msg.classList.remove("bg-red-50", "text-red-700", "bg-emerald-50", "text-emerald-700");
 
                   var inputs = form.querySelectorAll(".contact-form-input, textarea, input[type='checkbox']");
                   inputs.forEach(function (el) {
@@ -459,20 +459,16 @@
                   });
                 }
 
-                function showMsg(text, isSuccess) {
-                  msg.textContent = text;
-                  msg.classList.remove("hidden");
-                  if (isSuccess) {
-                    msg.classList.remove("bg-red-50", "text-red-700");
-                    msg.classList.add("bg-emerald-50", "text-emerald-700");
-                  } else {
-                    msg.classList.remove("bg-emerald-50", "text-emerald-700");
-                    msg.classList.add("bg-red-50", "text-red-700");
-                  }
-                }
-
                 form.addEventListener("submit", function (e) {
                   e.preventDefault();
+
+                  // Rate limit check
+                  var lastSubmit = localStorage.getItem(RATE_LIMIT_KEY);
+                  if (lastSubmit && Date.now() - parseInt(lastSubmit, 10) < RATE_LIMIT_MS) {
+                    var remaining = Math.ceil((RATE_LIMIT_MS - (Date.now() - parseInt(lastSubmit, 10))) / 60000);
+                    showMsg("Please wait " + remaining + " minute" + (remaining > 1 ? "s" : "") + " before submitting again.", false);
+                    return;
+                  }
 
                   clearErrors();
 
@@ -550,7 +546,6 @@
                   var payload = {
                     token     : "kgbhut2025",
                     honeypot  : document.getElementById("honeypot").value,
-                    ip        : document.getElementById("userIp").value || "unknown",
                     firstName : document.getElementById("firstName").value.trim(),
                     lastName  : document.getElementById("lastName").value.trim(),
                     phone     : document.getElementById("phone").value.trim(),
@@ -566,6 +561,7 @@
                   })
                   .then(function () {
                     // no-cors returns opaque response, assume success
+                    localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString());
                     showMsg("✓ Message sent! We'll get back to you within 48 hours.", true);
                     form.reset();
                     clearErrors();
@@ -803,7 +799,7 @@
         >
           <!-- About Us -->
           <div>
-            <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
+            <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
             <p class="mb-4 text-white/90 text-sm leading-relaxed">
             K.G. Bhut & Associates is a leading accounting and business
             consultancy firm providing comprehensive financial solutions since
@@ -814,6 +810,7 @@
               href="https://blog.kgbhut.com"
               target="_blank"
               rel="noopener"
+              aria-label="Visit our Medium blog"
               class="w-9 h-9 flex items-center justify-center rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors"
             ><svg width="24" height="24" viewBox="0 0 1043.63 592.71" fill="currentColor">
                 <g>
@@ -827,7 +824,7 @@
         </div>
         <!-- Services -->
         <div>
-          <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">SERVICES</h3>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">SERVICES</h3>
           <ul class="space-y-2">
             <li>
               <a
@@ -861,7 +858,7 @@
         </div>
         <!-- Discover -->
         <div>
-          <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">DISCOVER</h3>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">DISCOVER</h3>
           <ul class="space-y-2">
             <li>
               <a
@@ -892,21 +889,12 @@
         </div>
       </div>
       <div class="bg-[#0f1816] py-7">
-        <div class="max-w-7xl mx-auto px-6 text-center text-white/70 text-xs">
+        <div class="max-w-7xl mx-auto px-6 text-center text-white/85 text-xs">
           Copyright ©2025 All rights reserved by
           <a href="#" class="text-white hover:underline">K G BHUT & Associates</a>
         </div>
       </div>
     </footer>
-    <script>
-      fetch('https://api.ipify.org?format=json')
-        .then(function(r) { return r.json(); })
-        .then(function(d) {
-          var el = document.getElementById('userIp');
-          if (el) el.value = d.ip;
-        })
-        .catch(function() {}); // silently fail if blocked
-    </script>
   </body>
 </html>
 

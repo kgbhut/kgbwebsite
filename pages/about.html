@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -35,7 +35,6 @@
         "description": "Company overview, mission, vision, and industry expertise."
       }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -43,6 +42,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../css/output.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/index.js" defer></script>
   </head>
@@ -58,7 +58,7 @@
           <!-- Brand -->
           <div class="flex items-center gap-2">
              <div class="flex h-9 w-9 items-center justify-center rounded-full overflow-hidden">
-              <img src="../images/New CA Logo!.jpg" alt="KG" class="w-full h-full object-cover" />
+              <img src="../images/New CA Logo!.jpg" alt="KG" width="36" height="36" class="w-full h-full object-cover" />
             </div>
             <span
               class="text-lg font-semibold tracking-tight text-gray-900"
@@ -231,7 +231,7 @@
           <div class="hero-cta flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
             <a
               href="contact.html"
-              class="inline-flex items-center justify-center rounded-full bg-black px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors text-center"
+              class="inline-flex items-center justify-center rounded-full border border-gray-400 bg-black px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors text-center"
             >
               <span>Get consultation</span>
               <span class="ml-2" aria-hidden="true">→</span>
@@ -276,8 +276,8 @@
       <section class="company-overview mx-auto w-full bg-[#EAEFEF] rounded-3xl px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
         <div class="grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,0.9fr)] gap-10 lg:gap-12 items-start">
           <!-- Left: label, heading, smaller image -->
-          <div class="space-y-6 text-center md:text-left">
-            <div class="flex items-center justify-center md:justify-start gap-2">
+          <div class="space-y-6 text-left">
+            <div class="flex items-center justify-start gap-2">
               <span class="text-xs sm:text-sm font-semibold text-[#7F8CAA] uppercase tracking-[0.2em]">About Us</span>
             </div>
             <h2 class="section-heading text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-[#333446] leading-tight">
@@ -288,6 +288,8 @@
                 <img
                   src="../images/about.jpg"
                   alt="K.G. Bhut &amp; Associates team with client"
+                  width="900"
+                  height="1200"
                   class="w-full h-full object-cover object-top"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#333446] via-transparent to-transparent opacity-70"></div>
@@ -296,8 +298,8 @@
           </div>
 
           <!-- Middle: intro text + logo centered between paragraphs -->
-          <div class="space-y-6 mt-12 md:mt-24 lg:mt-48 text-center md:text-left">
-            <p class="section-subheading text-[#333446] text-sm sm:text-base leading-relaxed">
+          <div class="space-y-6 mt-12 md:mt-24 lg:mt-48 text-center md:text-left md:-ml-16">
+            <p class="section-subheading text-[#333446] text-sm sm:text-base leading-relaxed text-left">
               At our core, we're not just accountants—we're strategic partners committed to your financial
               success. With precision, insight, and years of experience.
             </p>
@@ -306,6 +308,8 @@
                 <img
                   src="../images/New CA Logo!.jpg"
                   alt="K.G. Bhut &amp; Associates logo"
+                  width="128"
+                  height="128"
                   class="h-20 sm:h-24 w-auto object-contain"
                 />
               </div>
@@ -315,15 +319,17 @@
           <!-- Right: 9+ stat and larger image -->
           <div class="space-y-4 text-center md:text-left">
             <div>
-              <p class="text-4xl sm:text-5xl font-bold text-[#333446] leading-none">9+</p>
-              <p class="text-sm font-medium text-[#7F8CAA] mt-2">Years Of</p>
-              <p class="text-sm font-medium text-[#7F8CAA]">Pro Experience</p>
+              <p class="text-4xl sm:text-5xl font-bold text-[#333446] leading-none text-left">9+</p>
+              <p class="text-sm font-medium text-[#7F8CAA] mt-2 text-left">Years Of</p>
+              <p class="text-sm font-medium text-[#7F8CAA] text-left">Pro Experience</p>
             </div>
             <div class="overflow-hidden rounded-2xl shadow-xl">
               <div class="relative">
                 <img
                   src="../images/about-section.jpeg"
                   alt="Lead Chartered Accountant"
+                  width="1200"
+                  height="900"
                   class="w-full h-80 sm:h-96 object-cover object-center"
                 />
                 <div class="absolute bottom-0 left-0 right-0 px-4 py-3 sm:px-5 sm:py-4 bg-gradient-to-t from-[#333446] via-[#7F8CAA] to-transparent">
@@ -338,7 +344,7 @@
         <!-- Bottom row: detailed text and CTA (stacked on mobile) -->
         <div class="mt-8 md:-mt-16 flex justify-center md:justify-end">
           <div class="space-y-6 max-w-3xl text-center md:text-left">
-            <p class="text-[#333446] text-sm sm:text-base leading-relaxed">
+            <p class="text-[#333446] text-sm sm:text-base leading-relaxed text-left">
               We exist to give ambitious businesses the financial clarity they need to lead with certainty. Our team
               combines expertise with next-level technology to simplify complexity, uncover opportunities, and keep
               you ahead of the curve. Because behind great business is an accountant who sees the full picture.
@@ -359,7 +365,7 @@
         class="mx-auto w-full rounded-3xl bg-[#333446] text-white px-6 sm:px-10 lg:px-16 py-12 lg:py-16 grid lg:grid-cols-[1.2fr,0.8fr] gap-10 lg:gap-14 items-center"
       >
         <!-- Left: Vision & Mission copy -->
-        <div class="space-y-6 text-center md:text-left">
+        <div class="space-y-6 text-left">
           <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-[#B8CFCE]"
             >Our Vision &amp; Mission</span
           >
@@ -367,7 +373,7 @@
             Intersection of Vision<br />
             and Trusted Financial Results.
           </h2>
-          <p class="section-subheading text-sm sm:text-base text-[#EAEFEF] max-w-xl mx-auto md:mx-0">
+          <p class="section-subheading text-sm sm:text-base text-[#EAEFEF] max-w-xl mx-auto md:mx-0 text-left">
             We combine long-term strategic vision with day‑to‑day financial clarity so that every
             decision you take is backed by insight, discipline, and measurable outcomes.
           </p>
@@ -378,7 +384,7 @@
             <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#333446]/80"
               >Vision</span
             >
-            <p class="text-sm leading-relaxed">
+            <p class="text-sm leading-relaxed text-left">
               To be the leading accounting and business consultancy firm in India, recognized for
               our innovative solutions, unwavering commitment to client success, and contribution
               to the growth of businesses across all sectors.
@@ -386,9 +392,9 @@
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 w-full max-w-none sm:max-w-md mx-auto md:mx-0">
-            <div class="text-center md:text-left">
+            <div class="text-left">
               <p class="text-3xl font-bold text-[#EAEFEF]">Our Mission</p>
-              <p class="mt-2 text-sm text-[#B8CFCE] leading-relaxed">
+              <p class="mt-2 text-sm text-[#B8CFCE] leading-relaxed text-left">
                 To empower businesses with comprehensive financial solutions, strategic guidance,
                 and compliance support that enable sustainable, confident growth.
               </p>
@@ -402,6 +408,8 @@
             <img
               src="../images/about-section 1.jpg"
               alt="Client discussing strategy with advisor"
+              width="1200"
+              height="900"
               class="w-full h-full object-cover object-center"
             />
           </div>
@@ -424,8 +432,8 @@
       <!-- Why Choose Us – separate section -->
       <section class="mt-16 mx-auto w-full rounded-3xl bg-[#333446] text-white px-6 sm:px-10 lg:px-16 py-10 shadow-xl">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-          <h2 class="section-heading text-3xl sm:text-4xl font-bold leading-tight text-center md:text-left">Why Choose Us</h2>
-          <p class="section-subheading text-sm sm:text-base text-[#B8CFCE] max-w-2xl w-full mx-auto md:mx-0 text-center md:text-left">
+          <h2 class="section-heading text-3xl sm:text-4xl font-bold leading-tight text-left">Why Choose Us</h2>
+          <p class="section-subheading text-sm sm:text-base text-[#B8CFCE] max-w-2xl w-full mx-auto md:mx-0 text-left">
             We provide the best services for your business needs with proven expertise and
             a client-first mindset.
           </p>
@@ -459,7 +467,7 @@
 <section class="our-process bg-[#EAEFEF] py-16 mx-0 md:-mx-6 px-6 rounded-3xl">
   <div class="max-w-6xl mx-auto grid gap-10 lg:gap-16 lg:grid-cols-2 items-center">
     <!-- Left: numbered cards -->
-    <div class="text-center md:text-left">
+    <div class="text-left">
       <span class="text-[#7F8CAA] font-semibold tracking-wide uppercase mb-2 block">
         How We Work
       </span>
@@ -481,7 +489,7 @@
             <h3 class="text-base sm:text-lg font-semibold mb-1">
               Discovery &amp; Analysis
             </h3>
-            <p class="text-xs sm:text-sm text-[#EAEFEF]">
+            <p class="text-xs sm:text-sm text-[#EAEFEF] text-left">
               Understanding your business goals and challenges through
               comprehensive consultations and financial analysis.
             </p>
@@ -497,7 +505,7 @@
             <h3 class="text-base sm:text-lg font-semibold mb-1">
               Strategy Development
             </h3>
-            <p class="text-xs sm:text-sm text-gray-600">
+            <p class="text-xs sm:text-sm text-gray-600 text-left">
               Developing customized strategies and solutions tailored to your
               specific business needs.
             </p>
@@ -513,7 +521,7 @@
             <h3 class="text-base sm:text-lg font-semibold mb-1">
               Implementation
             </h3>
-            <p class="text-xs sm:text-sm text-gray-600">
+            <p class="text-xs sm:text-sm text-gray-600 text-left">
               Executing strategies with precision and seamless integration
               with your existing processes.
             </p>
@@ -529,7 +537,7 @@
             <h3 class="text-base sm:text-lg font-semibold mb-1">
               Monitoring &amp; Optimization
             </h3>
-            <p class="text-xs sm:text-sm text-gray-600">
+            <p class="text-xs sm:text-sm text-gray-600 text-left">
               Continuous monitoring and optimization to ensure long-term
               effectiveness and business growth.
             </p>
@@ -544,6 +552,8 @@
         <img
           src="../images/about-section 1.jpg"
           alt="Team collaborating in modern office"
+          width="1200"
+          height="900"
           class="w-full h-full object-cover"
         />
       </div>
@@ -558,7 +568,7 @@
         >
           <!-- About Us -->
           <div>
-            <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
+            <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
             <p class="mb-4 text-white/90 text-sm leading-relaxed">
             K.G. Bhut & Associates is a leading accounting and business
             consultancy firm providing comprehensive financial solutions since
@@ -569,6 +579,7 @@
               href="https://blog.kgbhut.com"
               target="_blank"
               rel="noopener"
+              aria-label="Visit our Medium blog"
               class="w-9 h-9 flex items-center justify-center rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors"
             ><svg width="24" height="24" viewBox="0 0 1043.63 592.71" fill="currentColor">
                 <g>
@@ -582,7 +593,7 @@
         </div>
         <!-- Services -->
         <div>
-          <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">SERVICES</h3>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">SERVICES</h3>
           <ul class="space-y-2">
             <li>
               <a
@@ -616,7 +627,7 @@
         </div>
         <!-- Discover -->
         <div>
-          <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">DISCOVER</h3>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">DISCOVER</h3>
           <ul class="space-y-2">
             <li>
               <a
@@ -647,7 +658,7 @@
         </div>
       </div>
       <div class="bg-[#0f1816] py-7">
-        <div class="max-w-7xl mx-auto px-6 text-center text-white/70 text-xs">
+        <div class="max-w-7xl mx-auto px-6 text-center text-white/85 text-xs">
           Copyright ©2025 All rights reserved by
           <a href="#" class="text-white hover:underline">K G BHUT & Associates</a>
         </div>

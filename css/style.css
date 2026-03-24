@@ -1,3 +1,4 @@
+
 /* ========================================
    K.G. Bhut & Associates - Main Stylesheet
    ======================================== */
@@ -456,6 +457,17 @@ html {
   outline: none;
 }
 
+/* Keyboard accessibility: clear focus ring for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.35);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-title {
@@ -777,6 +789,21 @@ nav {
 @media (max-width: 768px) {
   .hero-section {
     padding: 40px 16px 32px;
+  }
+
+  /* Home about stats: keep labels visually aligned across two-column grid */
+  .about-stat-label {
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  /* Home services cards: keep paragraph text left-aligned on mobile */
+  .services-preview .service-card p {
+    text-align: left;
   }
 
   .hero-container {

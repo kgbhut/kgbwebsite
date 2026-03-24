@@ -49,7 +49,6 @@
       }
     </script>
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -58,6 +57,7 @@
       rel="stylesheet"
     />
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/output.css" />
     <link rel="stylesheet" href="css/style.css" />
     <!-- Custom JavaScript -->
     <script src="js/index.js" defer></script>
@@ -74,7 +74,7 @@
           <!-- Brand -->
           <div class="flex items-center gap-2">
             <div class="flex h-9 w-9 items-center justify-center rounded-full overflow-hidden">
-              <img src="./images/New CA Logo!.jpg" alt="KG" class="w-full h-full object-cover" />
+              <img src="./images/New CA Logo!.jpg" alt="KG" width="36" height="36" class="w-full h-full object-cover" />
             </div>
             <span
               class="text-lg font-semibold tracking-tight text-gray-900"
@@ -240,7 +240,7 @@
             1K+ Satisfied Clients →
           </div>
           <h1
-            class="hero-heading about-hero-title font-serif italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.1] tracking-[0.02em] text-white mb-6 mt-8"
+            class="hero-heading about-hero-title font-serif italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.1] tracking-[0.02em] text-white mb-6 mt-12"
           >
             <span class="block">Accounting</span>
             <span class="block">Expertise That</span>
@@ -257,7 +257,7 @@
           <div class="hero-cta flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
             <a
               href="./pages/contact.html"
-              class="inline-flex items-center justify-center rounded-full bg-black px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors text-center"
+              class="inline-flex items-center justify-center rounded-full border border-gray-400 bg-black px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors text-center"
             >
               <span>Get consultation</span>
               <span class="ml-2" aria-hidden="true">→</span>
@@ -275,7 +275,7 @@
 
     <main class="mx-auto max-w-7xl min-h-screen px-6 py-16 grid gap-12">
       <!-- About Preview Section -->
-      <section class="about-preview p-8 md:p-12">
+      <section class="about-preview px-0 py-8 md:p-12">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <span
@@ -291,30 +291,30 @@
               businesses thrive in today's competitive market. Our team of 5
               qualified professionals serves clients across diverse industries.
             </p>
-            <div class="grid grid-cols-2 gap-6 mb-8">
-              <div class="text-center">
+            <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-6 mb-8 items-start">
+              <div class="text-center flex flex-col items-center">
                 <div class="text-3xl font-bold text-green-600 mb-2 counter">
                   500
                 </div>
-                <div class="text-gray-600">Happy Clients</div>
+                <div class="text-gray-600 about-stat-label">Happy Clients</div>
               </div>
-              <div class="text-center">
+              <div class="text-center flex flex-col items-center">
                 <div class="text-3xl font-bold text-green-600 mb-2 counter">
                   9
                 </div>
-                <div class="text-gray-600">Years Experience</div>
+                <div class="text-gray-600 about-stat-label">Years Experience</div>
               </div>
-              <div class="text-center">
+              <div class="text-center flex flex-col items-center">
                 <div class="text-3xl font-bold text-green-600 mb-2 counter">
                   5
                 </div>
-                <div class="text-gray-600">Team Members</div>
+                <div class="text-gray-600 about-stat-label">Team Members</div>
               </div>
-              <div class="text-center">
+              <div class="text-center flex flex-col items-center">
                 <div class="text-3xl font-bold text-green-600 mb-2 counter">
                   3
                 </div>
-                <div class="text-gray-600">Office Locations</div>
+                <div class="text-gray-600 about-stat-label">Office Locations</div>
               </div>
             </div>
             <a
@@ -330,6 +330,8 @@
                 <img
                   src="./images/about-section.jpeg"
                   alt="K.G. Bhut & Associates office"
+                  width="1200"
+                  height="900"
                   class="w-full h-64 sm:h-80 md:h-96 object-cover object-center"
                 />
               </div>
@@ -337,6 +339,8 @@
                 <img
                   src="./images/office.avif"
                   alt="K.G. Bhut & Associates team at work"
+                  width="1200"
+                  height="900"
                   class="w-full h-64 sm:h-80 md:h-96 object-cover object-center"
                 />
               </div>
@@ -369,6 +373,8 @@
               <img
                 src="./images/accounting.avif"
                 alt="Accounting &amp; Bookkeeping"
+                width="1200"
+                height="675"
                 class="w-full h-40 object-cover"
               />
             </picture>
@@ -388,6 +394,8 @@
               <img
                 src="./images/taxcompliance.avif"
                 alt="Tax Planning &amp; Compliance"
+                width="1200"
+                height="675"
                 class="w-full h-40 object-cover"
               />
             </picture>
@@ -407,6 +415,8 @@
               <img
                 src="./images/consulting.avif"
                 alt="Business Consultancy"
+                width="1200"
+                height="675"
                 class="w-full h-40 object-cover"
               />
             </picture>
@@ -426,6 +436,8 @@
               <img
                 src="./images/compliance.avif"
                 alt="Compliance Services"
+                width="1200"
+                height="675"
                 class="w-full h-40 object-cover"
               />
             </picture>
@@ -524,6 +536,8 @@
                 id="testimonial-image"
                 src="./images/client-testimonial.jpg"
                 alt="Client testimonial"
+                width="1200"
+                height="800"
               />
             </picture>
 
@@ -725,6 +739,8 @@
                 id="case-image"
                 src="./images/case-studies-1.jpg"
                 alt="Case study image"
+                width="1600"
+                height="1000"
                 class="w-full h-80 sm:h-96 md:h-[26rem] lg:h-full object-cover"
               />
             </div>
@@ -740,7 +756,7 @@
         >
           <!-- About Us -->
           <div>
-            <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
+            <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
             <p class="mb-4 text-white/90 text-sm leading-relaxed">
             K.G. Bhut & Associates is a leading accounting and business
             consultancy firm providing comprehensive financial solutions since
@@ -751,6 +767,7 @@
               href="https://blog.kgbhut.com"
               target="_blank"
               rel="noopener"
+              aria-label="Visit our Medium blog"
               class="w-9 h-9 flex items-center justify-center rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors"
             ><svg width="24" height="24" viewBox="0 0 1043.63 592.71" fill="currentColor">
                 <g>
@@ -764,7 +781,7 @@
         </div>
         <!-- Services -->
         <div>
-          <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">SERVICES</h3>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">SERVICES</h3>
           <ul class="space-y-2">
             <li>
               <a
@@ -798,7 +815,7 @@
         </div>
         <!-- Discover -->
         <div>
-          <h3 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-4">DISCOVER</h3>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">DISCOVER</h3>
           <ul class="space-y-2">
             <li>
               <a
@@ -829,7 +846,7 @@
         </div>
       </div>
       <div class="bg-[#0f1816] py-7">
-        <div class="max-w-7xl mx-auto px-6 text-center text-white/70 text-xs">
+        <div class="max-w-7xl mx-auto px-6 text-center text-white/85 text-xs">
           Copyright ©2025 All rights reserved by
           <a href="#" class="text-white hover:underline">K G BHUT & Associates</a>
         </div>
