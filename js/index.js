@@ -20,162 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // GSAP and ScrollTrigger check and registration
-    if (typeof gsap !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
-    } else {
-      console.warn("GSAP not loaded, animations disabled");
-      // Optionally remove js-enabled to show all content
-      document.documentElement.classList.remove("js-enabled");
-      document.body.style.opacity = "1";
-      return;
-    }
-
-    // Cache header elements
-    const header = document.getElementById("main-header");
-    const isHomePage =
-      window.location.pathname === "/" ||
-      window.location.pathname.includes("index.html");
-
-    // Header scroll behavior for home page was making the navbar background
-    // switch between white and transparent. We now keep it always transparent
-    // like other pages, so we skip any home-specific header mutations here.
-
-    // Hero content fade-in animation (for pages with .hero-content)
-    if (document.querySelector(".hero-content")) {
-      gsap.to(".hero-content", {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        delay: 0.5,
+    // FAQ toggle functionality (independent of GSAP)
+    document.querySelectorAll(".faq-question").forEach((question) => {
+      question.addEventListener("click", function () {
+        const answer = this.nextElementSibling;
+        const icon = this.querySelector("svg");
+        if (answer && answer.classList.contains("hidden")) {
+          answer.classList.remove("hidden");
+          if (icon) icon.style.transform = "rotate(180deg)";
+        } else if (answer) {
+          answer.classList.add("hidden");
+          if (icon) icon.style.transform = "rotate(0deg)";
+        }
       });
-    }
-
-    // Homepage specific animations
-    if (document.querySelector(".hero-section")) {
-      if (document.querySelector(".about-preview")) {
-        gsap.to(".about-preview", {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".about-preview",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
-      if (document.querySelector(".services-preview")) {
-        gsap.to(".service-card", {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".services-preview",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
-      if (document.querySelector(".case-study-section")) {
-        gsap.to(".case-study-card", {
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: ".case-study-section",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
-    }
-
-    // About page animations
-    if (window.location.pathname.includes("about.html")) {
-      if (document.querySelector(".company-overview")) {
-        gsap.to(".company-overview", {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".company-overview",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
-      if (document.querySelector(".industry-expertise")) {
-        gsap.to(".industry-expertise", {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".industry-expertise",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
-    }
-
-    // Services page animations
-    if (window.location.pathname.includes("services.html")) {
-      if (document.querySelector(".industry-card")) {
-        gsap.to(".industry-card", {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".industry-card",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
-    }
-
-    // Contact page animations
-    if (window.location.pathname.includes("contact.html")) {
-      if (document.querySelector(".contact-card")) {
-        gsap.to(".contact-card", {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".contact-card",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
-
-      // FAQ toggle functionality
-      document.querySelectorAll(".faq-question").forEach((question) => {
-        question.addEventListener("click", function () {
-          const answer = this.nextElementSibling;
-          const icon = this.querySelector("svg");
-          if (answer && answer.classList.contains("hidden")) {
-            answer.classList.remove("hidden");
-            if (icon) icon.style.transform = "rotate(180deg)";
-          } else if (answer) {
-            answer.classList.add("hidden");
-            if (icon) icon.style.transform = "rotate(0deg)";
-          }
-        });
-      });
-    }
+    });
 
     // Section heading / subheading scroll-in animation (all pages)
     const scrollAnimatedElements = document.querySelectorAll(
@@ -199,58 +57,234 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollAnimatedElements.forEach((el) => observer.observe(el));
     }
 
-    // Parallax effect for hero backgrounds
-    if (document.querySelector("#parallax-bg")) {
-      gsap.to("#parallax-bg", {
-        yPercent: -50,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#parallax-bg",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    }
+    // GSAP is loaded lazily and only when animation targets exist.
+    const shouldLoadGsap = !!document.querySelector(
+      ".hero-content, .about-preview, .services-preview, .case-study-section, .company-overview, .industry-expertise, .industry-card, .contact-card, #parallax-bg, .counter",
+    );
 
-    // Counter animations
-    const counters = document.querySelectorAll(".counter");
-    if (counters.length > 0) {
-      counters.forEach((counter) => {
-        const finalValue = parseInt(counter.textContent);
-        if (!isNaN(finalValue)) {
-          gsap.fromTo(
-            counter,
-            { textContent: 0 },
-            {
-              textContent: finalValue,
-              duration: 2,
-              ease: "power2.out",
-              snap: { textContent: 1 },
-              scrollTrigger: {
-                trigger: counter,
-                start: "top 80%",
-                toggleActions: "play none none reverse",
-              },
+    const loadScript = (src) =>
+      new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+
+    function runGsapAnimations() {
+      if (typeof gsap === "undefined") return;
+      if (typeof ScrollTrigger !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+      }
+
+      // Hero content fade-in animation (for pages with .hero-content)
+      if (document.querySelector(".hero-content")) {
+        gsap.to(".hero-content", {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          delay: 0.5,
+        });
+      }
+
+      // Homepage specific animations
+      if (document.querySelector(".hero-section")) {
+        if (document.querySelector(".about-preview")) {
+          gsap.to(".about-preview", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ".about-preview",
+              start: "top 80%",
+              toggleActions: "play none none reverse",
             },
-          );
+          });
         }
-      });
+        if (document.querySelector(".services-preview")) {
+          gsap.to(".service-card", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ".services-preview",
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+        if (document.querySelector(".case-study-section")) {
+          gsap.to(".case-study-card", {
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: ".case-study-section",
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+      }
+
+      // About page animations
+      if (window.location.pathname.includes("about.html")) {
+        if (document.querySelector(".company-overview")) {
+          gsap.to(".company-overview", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ".company-overview",
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+        if (document.querySelector(".industry-expertise")) {
+          gsap.to(".industry-expertise", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ".industry-expertise",
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+      }
+
+      // Services page animations
+      if (window.location.pathname.includes("services.html")) {
+        if (document.querySelector(".industry-card")) {
+          gsap.to(".industry-card", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ".industry-card",
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+      }
+
+      // Contact page animations
+      if (window.location.pathname.includes("contact.html")) {
+        if (document.querySelector(".contact-card")) {
+          gsap.to(".contact-card", {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ".contact-card",
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+      }
+
+      // Parallax effect for hero backgrounds
+      if (document.querySelector("#parallax-bg")) {
+        gsap.to("#parallax-bg", {
+          yPercent: -50,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#parallax-bg",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+
+      // Counter animations
+      const counters = document.querySelectorAll(".counter");
+      if (counters.length > 0) {
+        counters.forEach((counter) => {
+          const finalValue = parseInt(counter.textContent);
+          if (!isNaN(finalValue)) {
+            gsap.fromTo(
+              counter,
+              { textContent: 0 },
+              {
+                textContent: finalValue,
+                duration: 2,
+                ease: "power2.out",
+                snap: { textContent: 1 },
+                scrollTrigger: {
+                  trigger: counter,
+                  start: "top 80%",
+                  toggleActions: "play none none reverse",
+                },
+              },
+            );
+          }
+        });
+      }
+
+      // Card hover animations (move up slightly on mouse enter)
+      document
+        .querySelectorAll(
+          ".service-card, .feature-card, .location-card, .contact-card, .industry-card, .pricing-card",
+        )
+        .forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            gsap.to(this, { y: -10, duration: 0.3, ease: "power2.out" });
+          });
+          card.addEventListener("mouseleave", function () {
+            gsap.to(this, { y: 0, duration: 0.3, ease: "power2.out" });
+          });
+        });
     }
 
-    // Card hover animations (move up slightly on mouse enter)
-    document
-      .querySelectorAll(
-        ".service-card, .feature-card, .location-card, .contact-card, .industry-card, .pricing-card",
-      )
-      .forEach((card) => {
-        card.addEventListener("mouseenter", function () {
-          gsap.to(this, { y: -10, duration: 0.3, ease: "power2.out" });
-        });
-        card.addEventListener("mouseleave", function () {
-          gsap.to(this, { y: 0, duration: 0.3, ease: "power2.out" });
-        });
-      });
+    async function initGsapDeferred() {
+      if (!shouldLoadGsap) return;
+      if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+        runGsapAnimations();
+        return;
+      }
+      try {
+        await loadScript(
+          "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js",
+        );
+        await loadScript(
+          "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js",
+        );
+        runGsapAnimations();
+      } catch (err) {
+        console.warn("GSAP failed to load, continuing without animations", err);
+      }
+    }
+
+    const queueGsapLoad = () => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(initGsapDeferred, { timeout: 1500 });
+      } else {
+        setTimeout(initGsapDeferred, 300);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      queueGsapLoad();
+    } else {
+      window.addEventListener("load", queueGsapLoad, { once: true });
+    }
 
     // Home page testimonial slider
     const testimonialText = document.getElementById("testimonial-text");
