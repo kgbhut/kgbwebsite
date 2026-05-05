@@ -1,6 +1,6 @@
-# K.G. Bhut & Associates Website
+# K G Bhut & Associates Website
 
-Corporate website for **K.G. Bhut & Associates** with responsive pages for Home, About, Services, and Contact, plus SEO metadata and Tailwind-based utility styling.
+Corporate website for **K G Bhut & Associates** with responsive pages for Home, About, Services, and Contact, plus SEO metadata and Tailwind-based utility styling.
 
 ## Tech Stack
 
