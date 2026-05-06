@@ -95,59 +95,91 @@
 }
   </script>
 
-  <!-- Tailwind CSS via CDN (replace with your own Tailwind build path if different) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            // Match the look of kgbhut.com — adjust these to your exact brand hex values if you have them
-            brand: {
-              900: '#1a4d3a',  // deep green (hero, headings)
-              800: '#2d6e52',  // mid green
-              50:  '#f0f9f4'   // very light green surface
-            },
-            accent: {
-              500: '#f4a261',  // amber CTA button
-              600: '#e08a3c'
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../css/output.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/index.js" defer></script>
 </head>
 
-<body class="font-sans text-gray-800 leading-relaxed bg-white">
-
-  <!-- Breadcrumbs -->
-  <nav class="bg-gray-50 py-3 px-5 text-sm text-gray-600">
-    <div class="max-w-6xl mx-auto">
-      <a href="/" class="text-brand-900 hover:underline">Home</a>
-      <span class="mx-2">»</span>
-      <a href="/pages/services.html" class="text-brand-900 hover:underline">Services</a>
-      <span class="mx-2">»</span>
-      <span>Company Registration in Pune</span>
+<body class="bg-white text-gray-900 min-h-screen overflow-x-hidden">
+  <header
+    id="main-header"
+    class="transition-colors duration-300 absolute top-0 left-0 w-full z-50 bg-transparent"
+  >
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+      <nav
+        class="flex items-center justify-between rounded-full bg-white/90 shadow-md px-6 py-3 backdrop-blur"
+      >
+        <div class="flex items-center gap-2">
+          <div class="flex h-9 w-9 items-center justify-center rounded-full overflow-hidden">
+            <img src="../images/new-ca-logo.jpg" alt="K G Bhut & Associates logo" width="36" height="36" class="w-full h-full object-cover" />
+          </div>
+          <span class="text-lg font-semibold tracking-tight text-gray-900" id="brand">K G Bhut &amp; Associates</span>
+        </div>
+        <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-800" id="nav-menu">
+          <li><a href="../index.html" class="nav-link relative transition-colors duration-300">HOME</a></li>
+          <li><a href="about.html" class="nav-link relative transition-colors duration-300">ABOUT</a></li>
+          <li><a href="services.html" class="nav-link relative transition-colors duration-300">SERVICES</a></li>
+          <li><a href="../index.html#case-study" class="nav-link relative transition-colors duration-300">CASE STUDY</a></li>
+          <li><a href="https://blog.kgbhut.com" target="_blank" rel="noopener" class="nav-link relative transition-colors duration-300">BLOG</a></li>
+        </ul>
+        <div class="hidden md:flex items-center gap-4">
+          <a href="contact.html" class="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 text-sm font-semibold text-white shadow-md hover:bg-gray-900">
+            <span>Get In Touch</span>
+            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">→</span>
+          </a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </nav>
     </div>
-  </nav>
+    <div id="mobile-menu" class="md:hidden hidden bg-white transition-colors duration-300 px-6 pb-4">
+      <ul class="flex flex-col gap-4 font-semibold">
+        <li><a href="../index.html" class="nav-link-mobile transition-colors duration-300">HOME</a></li>
+        <li><a href="about.html" class="nav-link-mobile transition-colors duration-300">ABOUT</a></li>
+        <li><a href="services.html" class="nav-link-mobile transition-colors duration-300">SERVICES</a></li>
+        <li><a href="../index.html#case-study" class="nav-link-mobile transition-colors duration-300">CASE STUDY</a></li>
+        <li><a href="https://blog.kgbhut.com" target="_blank" rel="noopener" class="nav-link-mobile transition-colors duration-300">BLOG</a></li>
+        <li><a href="contact.html" class="nav-link-mobile transition-colors duration-300">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
 
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-brand-900 to-brand-800 text-white py-20 px-5 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Company Registration in Pune – Pvt Ltd, LLP & OPC Registration</h1>
-      <p class="text-lg md:text-xl mb-8 opacity-95 max-w-3xl mx-auto">Start your business legally with K.G. Bhut & Associates – a trusted CA firm offering complete company registration services with end-to-end support.</p>
-      <a href="/pages/contact.html"
-         class="inline-block bg-accent-500 hover:bg-accent-600 text-gray-900 font-semibold px-8 py-4 rounded-md transition transform hover:-translate-y-0.5 shadow-md">
-        Get Free Consultation →
-      </a>
+  <section class="relative min-h-screen -mt-28 flex items-center justify-center overflow-hidden bg-black">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('../images/services-hero.jpg'); background-size: cover; background-position: center center; will-change: transform;"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 flex items-center min-h-[calc(100vh-8rem)] w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-left">
+      <div class="hero-content max-w-2xl mt-28 sm:mt-32 md:mt-0">
+        <h1 class="hero-heading about-hero-title font-serif italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] tracking-[0.02em] text-white mb-6 break-words" style="font-family: 'Playfair Display', Georgia, serif;">
+          <span class="block">COMPANY</span>
+          <span class="block about-hero-title-frost">REGISTRATION</span>
+        </h1>
+        <p class="hero-subheading text-white/95 text-sm sm:text-base md:text-lg w-full mb-6 sm:mb-8 leading-relaxed break-words">
+          Start your business legally with K.G. Bhut & Associates – a trusted CA firm offering complete company registration services with end-to-end support.
+        </p>
+        <div class="hero-cta flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
+          <a href="contact.html" class="inline-flex items-center justify-center rounded-full border border-gray-400 bg-black px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors text-center">
+            <span>Get Free Consultation</span>
+            <span class="ml-2" aria-hidden="true">→</span>
+          </a>
+          <a href="services.html" class="inline-flex items-center justify-center rounded-full bg-white/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-gray-900 shadow-md hover:bg-white transition-colors text-center">
+            View All Services
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Intro -->
   <section class="py-16 px-5">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-6">Expert Company Registration Services in Pune</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Expert Company Registration Services in Pune</h2>
       <p class="mb-4">Looking for fast and reliable <strong>company registration in Pune</strong>? At K.G. Bhut & Associates, we help entrepreneurs and startups register their businesses across Baner, Aundh, Wakad, Hinjewadi, Kothrud, and the greater Pune region. Our team of qualified Chartered Accountants handles the entire registration process — from name approval to final incorporation certificate — so you can launch your business with confidence.</p>
       <p>Whether you want to register a Private Limited Company, LLP, One Person Company, or Partnership Firm in Pune, our experts ensure 100% compliance with MCA and Companies Act requirements while keeping the process quick and affordable.</p>
     </div>
@@ -156,31 +188,31 @@
   <!-- Section 2: Who/Types/etc. -->
   <section class="py-16 px-5 bg-gray-50">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-6">Types of Business Registration We Handle in Pune</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Types of Business Registration We Handle in Pune</h2>
       <p class="mb-8">We help you choose the right business structure based on your goals, funding needs, and liability concerns:</p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Private Limited Company</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Private Limited Company</h4>
           <p class="text-gray-700 text-sm">Best for startups seeking funding. Limited liability, separate legal entity, and easier investor onboarding.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Limited Liability Partnership (LLP)</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Limited Liability Partnership (LLP)</h4>
           <p class="text-gray-700 text-sm">Ideal for service-based businesses, professionals, and small partnerships seeking flexibility and limited liability.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">One Person Company (OPC)</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">One Person Company (OPC)</h4>
           <p class="text-gray-700 text-sm">Perfect for solo entrepreneurs in Pune who want corporate benefits without partners.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Partnership Firm</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Partnership Firm</h4>
           <p class="text-gray-700 text-sm">Traditional structure for two or more partners running a business together. Lower compliance.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Sole Proprietorship</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Sole Proprietorship</h4>
           <p class="text-gray-700 text-sm">Simplest business structure for individual traders, freelancers, and small shop owners.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Section 8 Company (NGO)</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Section 8 Company (NGO)</h4>
           <p class="text-gray-700 text-sm">For non-profit organizations focused on charity, education, or social welfare in Pune.</p>
         </div>
       </div>
@@ -190,15 +222,15 @@
   <!-- Documents -->
   <section class="py-16 px-5">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-6">Documents Required for Company Registration</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Documents Required for Company Registration</h2>
       <p class="mb-6">Our team helps you prepare and verify all required documents to ensure smooth registration. Here's the typical checklist:</p>
-      <h3 class="text-xl font-semibold text-brand-800 mt-6 mb-3">For Directors / Partners</h3>
+      <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">For Directors / Partners</h3>
       <ul class="list-disc pl-6 space-y-1 text-gray-700"><li>PAN card of all directors/partners</li>
 <li>Aadhaar card and one additional ID proof (voter ID, passport, driving license)</li>
 <li>Latest passport-size photographs</li>
 <li>Recent utility bill or bank statement (address proof)</li>
 <li>Digital Signature Certificate (DSC) – we help obtain this</li>
-<li>Director Identification Number (DIN) – we apply for this</li></ul><h3 class="text-xl font-semibold text-brand-800 mt-6 mb-3">For Registered Office</h3>
+<li>Director Identification Number (DIN) – we apply for this</li></ul><h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">For Registered Office</h3>
       <ul class="list-disc pl-6 space-y-1 text-gray-700"><li>Recent electricity bill of office premises (not older than 2 months)</li>
 <li>Rent agreement (if rented)</li>
 <li>NOC from property owner</li>
@@ -209,40 +241,40 @@
   <!-- Process -->
   <section class="py-16 px-5 bg-gray-50">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-8">Our 5-Step Company Registration Process</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Our 5-Step Company Registration Process</h2>
       <div class="space-y-4">
         <div class="bg-white p-6 rounded-lg flex gap-5 items-start shadow-sm">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-semibold">1</div>
+          <div class="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-semibold">1</div>
           <div>
-            <h4 class="font-semibold text-brand-900 mb-1 text-lg">Free Consultation</h4>
+            <h4 class="font-semibold text-gray-900 mb-1 text-lg">Free Consultation</h4>
             <p class="text-gray-700">Meet our experts to discuss your business goals. We help you choose the right business structure and explain all costs upfront.</p>
           </div>
         </div>
         <div class="bg-white p-6 rounded-lg flex gap-5 items-start shadow-sm">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-semibold">2</div>
+          <div class="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-semibold">2</div>
           <div>
-            <h4 class="font-semibold text-brand-900 mb-1 text-lg">DSC & DIN Application</h4>
+            <h4 class="font-semibold text-gray-900 mb-1 text-lg">DSC & DIN Application</h4>
             <p class="text-gray-700">We obtain Digital Signature Certificates and Director Identification Numbers for all proposed directors.</p>
           </div>
         </div>
         <div class="bg-white p-6 rounded-lg flex gap-5 items-start shadow-sm">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-semibold">3</div>
+          <div class="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-semibold">3</div>
           <div>
-            <h4 class="font-semibold text-brand-900 mb-1 text-lg">Name Approval (RUN/SPICe+)</h4>
+            <h4 class="font-semibold text-gray-900 mb-1 text-lg">Name Approval (RUN/SPICe+)</h4>
             <p class="text-gray-700">We apply for company name reservation with MCA. We provide 2-3 name options to maximize approval chances.</p>
           </div>
         </div>
         <div class="bg-white p-6 rounded-lg flex gap-5 items-start shadow-sm">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-semibold">4</div>
+          <div class="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-semibold">4</div>
           <div>
-            <h4 class="font-semibold text-brand-900 mb-1 text-lg">Incorporation Filing</h4>
+            <h4 class="font-semibold text-gray-900 mb-1 text-lg">Incorporation Filing</h4>
             <p class="text-gray-700">We draft MOA, AOA, and file SPICe+ form with MCA along with all required documents.</p>
           </div>
         </div>
         <div class="bg-white p-6 rounded-lg flex gap-5 items-start shadow-sm">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-semibold">5</div>
+          <div class="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-semibold">5</div>
           <div>
-            <h4 class="font-semibold text-brand-900 mb-1 text-lg">Certificate of Incorporation</h4>
+            <h4 class="font-semibold text-gray-900 mb-1 text-lg">Certificate of Incorporation</h4>
             <p class="text-gray-700">Receive your Certificate of Incorporation, PAN, TAN, and CIN. We also assist with bank account opening and post-incorporation compliance.</p>
           </div>
         </div>
@@ -253,30 +285,30 @@
   <!-- Why choose us -->
   <section class="py-16 px-5">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-8">Why Choose K.G. Bhut & Associates for Company Registration in Pune?</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Why Choose K.G. Bhut & Associates for Company Registration in Pune?</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Experienced CA Team</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Experienced CA Team</h4>
           <p class="text-gray-700 text-sm">Trusted by businesses and startups across Pune for company registration.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Qualified Chartered Accountants</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Qualified Chartered Accountants</h4>
           <p class="text-gray-700 text-sm">All MCA filings handled and verified by qualified CAs.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Fast Turnaround</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Fast Turnaround</h4>
           <p class="text-gray-700 text-sm">Pvt Ltd registration in 10-15 working days with proper documentation.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Affordable Pricing</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Affordable Pricing</h4>
           <p class="text-gray-700 text-sm">Transparent all-inclusive pricing. No hidden charges or surprises.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">100% Online Process</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">100% Online Process</h4>
           <p class="text-gray-700 text-sm">Complete the entire registration digitally — no in-person visits required.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Post-Incorporation Support</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Post-Incorporation Support</h4>
           <p class="text-gray-700 text-sm">GST, accounting, ROC filing, and ongoing compliance — all under one roof.</p>
         </div>
       </div>
@@ -286,38 +318,38 @@
   <!-- FAQ -->
   <section class="py-16 px-5 bg-gray-50">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
       <div class="space-y-2">
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             How long does company registration take in Pune?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-gray-700">Private Limited Company registration typically takes 10-15 working days. LLP registration takes 15-20 working days. With K.G. Bhut & Associates, we ensure fastest processing through accurate documentation.</p>
         </details>
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             Which company structure is best for startups in Pune?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-gray-700">For most startups in Pune, Private Limited Company is recommended due to limited liability protection, easier funding from investors, and credibility with clients. LLP is good for service-based businesses, while OPC suits solo entrepreneurs.</p>
         </details>
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             What is the minimum capital required to register a Pvt Ltd company?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-gray-700">There is no minimum capital requirement to register a Private Limited Company in India. You can start with any authorized capital, even ₹1 lakh, depending on your business needs.</p>
         </details>
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             How much does it cost to register a company in Pune?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-gray-700">The total cost includes government fees, DSC, DIN, stamp duty, and professional fees. Pvt Ltd registration typically ranges from ₹7,000 to ₹15,000 all-inclusive. Contact us for transparent pricing.</p>
         </details>
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             Can I register a company at my home address in Pune?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
@@ -327,17 +359,58 @@
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="bg-brand-900 text-white text-center py-16 px-5">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Register Your Company?</h2>
-      <p class="text-lg opacity-90 mb-8">Get expert help from Pune's trusted CA firm. Book a free consultation today.</p>
-      <a href="/pages/contact.html"
-         class="inline-block bg-accent-500 hover:bg-accent-600 text-gray-900 font-semibold px-8 py-4 rounded-md transition transform hover:-translate-y-0.5 shadow-md">
-        Contact Us Now →
-      </a>
+  <section class="relative py-16 min-h-[320px] flex items-center" style="background-color: #708993;">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-left">Ready to Register Your Company?</h2>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto text-left">Get expert help from Pune's trusted CA firm. Book a free consultation today.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="bg-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors" style="color: #708993;">Contact Us Now</a>
+          <a href="services.html" class="cta-outline-btn border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white transition-colors">View All Services</a>
+        </div>
+      </div>
     </div>
   </section>
 
+  <footer class="mt-16 overflow-hidden bg-[#0f1816] pb-6">
+    <div class="bg-[#1a2e2a] text-white pt-12 pb-10 rounded-b-[4rem]">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
+          <p class="mb-4 text-white/90 text-sm leading-relaxed">K G Bhut & Associates is a leading accounting and business consultancy firm providing comprehensive financial solutions since 2017.</p>
+          <div class="flex gap-3">
+            <a href="https://blog.kgbhut.com" target="_blank" rel="noopener" aria-label="Visit our Medium blog" class="w-9 h-9 flex items-center justify-center rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors">
+              <svg width="24" height="24" viewBox="0 0 1043.63 592.71" fill="currentColor"><g><path d="M588.67 296.36c0 163.73-131.85 296.36-294.33 296.36S0 460.09 0 296.36 131.85 0 294.34 0s294.33 132.63 294.33 296.36z"/><path d="M911.23 296.36c0 154.96-65.93 280.64-147.27 280.64s-147.27-125.68-147.27-280.64S682.62 15.71 763.96 15.71s147.27 125.69 147.27 280.65z"/><path d="M1043.63 296.36c0 146.18-23.28 264.7-52 264.7s-52-118.52-52-264.7 23.28-264.7 52-264.7 52 118.52 52 264.7z"/></g></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">SERVICES</h3>
+          <ul class="space-y-2">
+            <li><a href="services.html" class="text-white/90 hover:text-white transition-colors text-sm">Accounting Services</a></li>
+            <li><a href="services.html" class="text-white/90 hover:text-white transition-colors text-sm">Tax Planning & Compliance</a></li>
+            <li><a href="services.html" class="text-white/90 hover:text-white transition-colors text-sm">Business Consultancy</a></li>
+            <li><a href="services.html" class="text-white/90 hover:text-white transition-colors text-sm">Financial Advisory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">DISCOVER</h3>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="text-white/90 hover:text-white transition-colors text-sm">About us</a></li>
+            <li><a href="contact.html" class="text-white/90 hover:text-white transition-colors text-sm">Contact us</a></li>
+            <li><a href="#" class="text-white/90 hover:text-white transition-colors text-sm">Terms & Conditions</a></li>
+            <li><a href="#" class="text-white/90 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#0f1816] py-7">
+      <div class="max-w-7xl mx-auto px-6 text-center text-white/85 text-xs">
+        Copyright ©2025 All rights reserved by
+        <a href="#" class="text-white hover:underline">K G BHUT & Associates</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
+

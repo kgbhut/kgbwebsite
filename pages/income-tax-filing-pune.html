@@ -95,59 +95,83 @@
 }
   </script>
 
-  <!-- Tailwind CSS via CDN (replace with your own Tailwind build path if different) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            // Match the look of kgbhut.com — adjust these to your exact brand hex values if you have them
-            brand: {
-              900: '#1a4d3a',  // deep green (hero, headings)
-              800: '#2d6e52',  // mid green
-              50:  '#f0f9f4'   // very light green surface
-            },
-            accent: {
-              500: '#f4a261',  // amber CTA button
-              600: '#e08a3c'
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/output.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/index.js" defer></script>
 </head>
 
-<body class="font-sans text-gray-800 leading-relaxed bg-white">
-
-  <!-- Breadcrumbs -->
-  <nav class="bg-gray-50 py-3 px-5 text-sm text-gray-600">
-    <div class="max-w-6xl mx-auto">
-      <a href="/" class="text-brand-900 hover:underline">Home</a>
-      <span class="mx-2">»</span>
-      <a href="/pages/services.html" class="text-brand-900 hover:underline">Services</a>
-      <span class="mx-2">»</span>
-      <span>Income Tax Filing in Pune</span>
+<body class="bg-white text-gray-900 min-h-screen overflow-x-hidden">
+  <header id="main-header" class="transition-colors duration-300 absolute top-0 left-0 w-full z-50 bg-transparent">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex items-center justify-between rounded-full bg-white/90 shadow-md px-6 py-3 backdrop-blur">
+        <div class="flex items-center gap-2">
+          <div class="flex h-9 w-9 items-center justify-center rounded-full overflow-hidden">
+            <img src="../images/new-ca-logo.jpg" alt="K G Bhut & Associates logo" width="36" height="36" class="w-full h-full object-cover" />
+          </div>
+          <span class="text-lg font-semibold tracking-tight text-gray-900" id="brand">K G Bhut &amp; Associates</span>
+        </div>
+        <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-800" id="nav-menu">
+          <li><a href="../index.html" class="nav-link relative transition-colors duration-300">HOME</a></li>
+          <li><a href="about.html" class="nav-link relative transition-colors duration-300">ABOUT</a></li>
+          <li><a href="services.html" class="nav-link relative transition-colors duration-300">SERVICES</a></li>
+          <li><a href="../index.html#case-study" class="nav-link relative transition-colors duration-300">CASE STUDY</a></li>
+          <li><a href="https://blog.kgbhut.com" target="_blank" rel="noopener" class="nav-link relative transition-colors duration-300">BLOG</a></li>
+        </ul>
+        <div class="hidden md:flex items-center gap-4">
+          <a href="contact.html" class="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 text-sm font-semibold text-white shadow-md hover:bg-gray-900">
+            <span>Get In Touch</span>
+            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">→</span>
+          </a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </nav>
     </div>
-  </nav>
+    <div id="mobile-menu" class="md:hidden hidden bg-white transition-colors duration-300 px-6 pb-4">
+      <ul class="flex flex-col gap-4 font-semibold">
+        <li><a href="../index.html" class="nav-link-mobile transition-colors duration-300">HOME</a></li>
+        <li><a href="about.html" class="nav-link-mobile transition-colors duration-300">ABOUT</a></li>
+        <li><a href="services.html" class="nav-link-mobile transition-colors duration-300">SERVICES</a></li>
+        <li><a href="../index.html#case-study" class="nav-link-mobile transition-colors duration-300">CASE STUDY</a></li>
+        <li><a href="https://blog.kgbhut.com" target="_blank" rel="noopener" class="nav-link-mobile transition-colors duration-300">BLOG</a></li>
+        <li><a href="contact.html" class="nav-link-mobile transition-colors duration-300">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
 
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-brand-900 to-brand-800 text-white py-20 px-5 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Income Tax Filing in Pune – Expert ITR Services for Individuals & Businesses</h1>
-      <p class="text-lg md:text-xl mb-8 opacity-95 max-w-3xl mx-auto">File your ITR accurately and on time with K.G. Bhut & Associates – a trusted CA firm helping clients save tax legally with expert advisory.</p>
-      <a href="/pages/contact.html"
-         class="inline-block bg-accent-500 hover:bg-accent-600 text-gray-900 font-semibold px-8 py-4 rounded-md transition transform hover:-translate-y-0.5 shadow-md">
-        Get Free Consultation →
-      </a>
+  <section class="relative min-h-screen -mt-28 flex items-center justify-center overflow-hidden bg-black">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('../images/services-hero.jpg'); background-size: cover; background-position: center center; will-change: transform;"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 flex items-center min-h-[calc(100vh-8rem)] w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-left">
+      <div class="hero-content max-w-2xl mt-28 sm:mt-32 md:mt-0">
+        <h1 class="hero-heading about-hero-title font-serif italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] tracking-[0.02em] text-white mb-6 break-words" style="font-family: 'Playfair Display', Georgia, serif;">
+          <span class="block">INCOME TAX</span>
+          <span class="block about-hero-title-frost">FILING</span>
+        </h1>
+        <p class="hero-subheading text-white/95 text-sm sm:text-base md:text-lg w-full mb-6 sm:mb-8 leading-relaxed break-words">
+          File your ITR accurately and on time with K.G. Bhut & Associates – a trusted CA firm helping clients save tax legally with expert advisory.
+        </p>
+        <div class="hero-cta flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
+          <a href="contact.html" class="inline-flex items-center justify-center rounded-full border border-gray-400 bg-black px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors text-center">
+            <span>Get Free Consultation</span>
+            <span class="ml-2" aria-hidden="true">→</span>
+          </a>
+          <a href="services.html" class="inline-flex items-center justify-center rounded-full bg-white/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-gray-900 shadow-md hover:bg-white transition-colors text-center">
+            View All Services
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Intro -->
   <section class="py-16 px-5">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-6">Professional Income Tax Filing Services in Pune</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6" style="color: #333446;">Professional Income Tax Filing Services in Pune</h2>
       <p class="mb-4">Looking for reliable <strong>income tax filing in Pune</strong>? At K.G. Bhut & Associates, we make ITR filing simple, accurate, and stress-free for salaried employees, business owners, freelancers, and NRIs across Baner, Aundh, Wakad, Hinjewadi, Kothrud, and the greater Pune region. Our team of qualified Chartered Accountants ensures your tax return is filed correctly while maximizing your legal tax savings.</p>
       <p>Whether it's your first ITR or you have complex income from multiple sources — salary, capital gains, business, freelancing, or rental income — our tax experts in Pune handle everything from document review to final e-filing.</p>
     </div>
@@ -156,31 +180,31 @@
   <!-- Section 2: Who/Types/etc. -->
   <section class="py-16 px-5 bg-gray-50">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-6">Who Should File Income Tax Returns in Pune?</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Who Should File Income Tax Returns in Pune?</h2>
       <p class="mb-8">You should file your ITR if you fall into any of these categories:</p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Salaried Employees</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Salaried Employees</h4>
           <p class="text-gray-700 text-sm">If your annual income exceeds the basic exemption limit of ₹2.5 lakhs (or ₹3 lakhs under new regime).</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Business Owners</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Business Owners</h4>
           <p class="text-gray-700 text-sm">Sole proprietors, partnerships, and companies operating in Pune must file ITR every year.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Freelancers & Consultants</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Freelancers & Consultants</h4>
           <p class="text-gray-700 text-sm">IT professionals, designers, doctors, and consultants in Pune with professional income.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Investors</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Investors</h4>
           <p class="text-gray-700 text-sm">Stock market traders, mutual fund investors, and those with capital gains.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Property Owners</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Property Owners</h4>
           <p class="text-gray-700 text-sm">Earning rental income from properties in Pune or elsewhere.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">NRIs</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">NRIs</h4>
           <p class="text-gray-700 text-sm">Non-residents with Indian income or property must file ITR.</p>
         </div>
       </div>
@@ -190,16 +214,16 @@
   <!-- Documents -->
   <section class="py-16 px-5">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-6">Documents Required for Income Tax Filing</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Documents Required for Income Tax Filing</h2>
       <p class="mb-6">Our team helps you organize all required documents for accurate ITR filing. Here's the typical checklist:</p>
-      <h3 class="text-xl font-semibold text-brand-800 mt-6 mb-3">For Salaried Individuals</h3>
+      <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">For Salaried Individuals</h3>
       <ul class="list-disc pl-6 space-y-1 text-gray-700"><li>PAN card and Aadhaar card</li>
 <li>Form 16 from your employer</li>
 <li>Form 26AS (tax credit statement)</li>
 <li>Bank statements for the financial year</li>
 <li>Investment proofs (LIC, PPF, ELSS, NPS) for 80C deductions</li>
 <li>Home loan interest certificate (if applicable)</li>
-<li>Health insurance receipts (80D)</li></ul><h3 class="text-xl font-semibold text-brand-800 mt-6 mb-3">For Business Owners & Professionals</h3>
+<li>Health insurance receipts (80D)</li></ul><h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">For Business Owners & Professionals</h3>
       <ul class="list-disc pl-6 space-y-1 text-gray-700"><li>PAN, Aadhaar, and business registration documents</li>
 <li>Profit & Loss statement and Balance Sheet</li>
 <li>Bank statements (business and personal)</li>
@@ -212,33 +236,33 @@
   <!-- Process -->
   <section class="py-16 px-5 bg-gray-50">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-8">Our 4-Step ITR Filing Process</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Our 4-Step ITR Filing Process</h2>
       <div class="space-y-4">
         <div class="bg-white p-6 rounded-lg flex gap-5 items-start shadow-sm">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-semibold">1</div>
+          <div class="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-semibold">1</div>
           <div>
-            <h4 class="font-semibold text-brand-900 mb-1 text-lg">Free Consultation</h4>
+            <h4 class="font-semibold text-gray-900 mb-1 text-lg">Free Consultation</h4>
             <p class="text-gray-700">Connect with our tax experts. We assess your income sources and identify all tax-saving opportunities legally available to you.</p>
           </div>
         </div>
         <div class="bg-white p-6 rounded-lg flex gap-5 items-start shadow-sm">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-semibold">2</div>
+          <div class="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-semibold">2</div>
           <div>
-            <h4 class="font-semibold text-brand-900 mb-1 text-lg">Document Review</h4>
+            <h4 class="font-semibold text-gray-900 mb-1 text-lg">Document Review</h4>
             <p class="text-gray-700">Share your documents digitally — Form 16, bank statements, investment proofs. We verify everything for accuracy.</p>
           </div>
         </div>
         <div class="bg-white p-6 rounded-lg flex gap-5 items-start shadow-sm">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-semibold">3</div>
+          <div class="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-semibold">3</div>
           <div>
-            <h4 class="font-semibold text-brand-900 mb-1 text-lg">Tax Computation & Filing</h4>
+            <h4 class="font-semibold text-gray-900 mb-1 text-lg">Tax Computation & Filing</h4>
             <p class="text-gray-700">Our CAs compute your tax liability, claim all eligible deductions, and e-file your ITR on the income tax portal.</p>
           </div>
         </div>
         <div class="bg-white p-6 rounded-lg flex gap-5 items-start shadow-sm">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-semibold">4</div>
+          <div class="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-semibold">4</div>
           <div>
-            <h4 class="font-semibold text-brand-900 mb-1 text-lg">E-Verification & Acknowledgment</h4>
+            <h4 class="font-semibold text-gray-900 mb-1 text-lg">E-Verification & Acknowledgment</h4>
             <p class="text-gray-700">We help you e-verify your return and provide ITR-V acknowledgment. We also guide you on tax refund tracking if applicable.</p>
           </div>
         </div>
@@ -249,30 +273,30 @@
   <!-- Why choose us -->
   <section class="py-16 px-5">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-8">Why Choose K.G. Bhut & Associates for ITR Filing in Pune?</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Why Choose K.G. Bhut & Associates for ITR Filing in Pune?</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Experienced CA Team</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Experienced CA Team</h4>
           <p class="text-gray-700 text-sm">Trusted by individuals and businesses across Pune for accurate tax filing.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Maximum Tax Savings</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Maximum Tax Savings</h4>
           <p class="text-gray-700 text-sm">We identify every legal deduction to minimize your tax liability.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">All ITR Forms Handled</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">All ITR Forms Handled</h4>
           <p class="text-gray-700 text-sm">ITR-1, ITR-2, ITR-3, ITR-4 — we file all return types accurately.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Affordable Pricing</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Affordable Pricing</h4>
           <p class="text-gray-700 text-sm">Transparent fees with no hidden charges. Special rates for salaried clients.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">100% Online Filing</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">100% Online Filing</h4>
           <p class="text-gray-700 text-sm">Complete the entire process digitally — share documents from anywhere.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-800 shadow-sm hover:shadow-md transition">
-          <h4 class="font-semibold text-brand-900 mb-2 text-lg">Year-Round Support</h4>
+        <div class="bg-white p-6 rounded-lg border-l-4 border-gray-800 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900 mb-2 text-lg">Year-Round Support</h4>
           <p class="text-gray-700 text-sm">Tax planning, advance tax, and notice handling — we support you all year.</p>
         </div>
       </div>
@@ -282,38 +306,38 @@
   <!-- FAQ -->
   <section class="py-16 px-5 bg-gray-50">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
       <div class="space-y-2">
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             What is the last date for ITR filing in India?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-gray-700">For individuals and non-audit cases, the ITR filing deadline is July 31. For businesses requiring audit, the deadline is October 31. Late filing attracts penalties under Section 234F up to ₹5,000.</p>
         </details>
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             Which ITR form should I file?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-gray-700">ITR-1 is for salaried individuals with income up to ₹50 lakhs. ITR-2 is for individuals with capital gains. ITR-3 is for business/professional income. ITR-4 is for presumptive taxation. Our CAs help select the correct form for your case.</p>
         </details>
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             What documents are needed for ITR filing in Pune?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-gray-700">PAN card, Aadhaar card, Form 16 (for salaried), bank statements, investment proofs (80C, 80D), home loan certificate, and capital gains statements if applicable.</p>
         </details>
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             How much does ITR filing cost in Pune?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-gray-700">ITR filing fees depend on the complexity of your return. Salaried individual returns are most affordable, while business returns with multiple income sources cost more. Contact K.G. Bhut & Associates for transparent pricing.</p>
         </details>
         <details class="border-b border-gray-200 py-4 group">
-          <summary class="font-semibold text-brand-900 text-lg cursor-pointer flex justify-between items-center">
+          <summary class="font-semibold text-gray-900 text-lg cursor-pointer flex justify-between items-center">
             What happens if I miss the ITR filing deadline?
             <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
           </summary>
@@ -323,17 +347,58 @@
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="bg-brand-900 text-white text-center py-16 px-5">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to File Your Income Tax Return?</h2>
-      <p class="text-lg opacity-90 mb-8">Get expert help from Pune's trusted CA firm. Book a free consultation today.</p>
-      <a href="/pages/contact.html"
-         class="inline-block bg-accent-500 hover:bg-accent-600 text-gray-900 font-semibold px-8 py-4 rounded-md transition transform hover:-translate-y-0.5 shadow-md">
-        Contact Us Now →
-      </a>
+  <section class="relative py-16 min-h-[320px] flex items-center" style="background-color: #708993;">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-left">Ready to File Your Income Tax Return?</h2>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto text-left">Get expert help from Pune's trusted CA firm. Book a free consultation today.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="bg-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors" style="color: #708993;">Contact Us Now</a>
+          <a href="services.html" class="cta-outline-btn border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white transition-colors">View All Services</a>
+        </div>
+      </div>
     </div>
   </section>
 
+  <footer class="mt-16 overflow-hidden bg-[#0f1816] pb-6">
+    <div class="bg-[#1a2e2a] text-white pt-12 pb-10 rounded-b-[4rem]">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
+          <p class="mb-4 text-white/90 text-sm leading-relaxed">K G Bhut & Associates is a leading accounting and business consultancy firm providing comprehensive financial solutions since 2017.</p>
+          <div class="flex gap-3">
+            <a href="https://blog.kgbhut.com" target="_blank" rel="noopener" aria-label="Visit our Medium blog" class="w-9 h-9 flex items-center justify-center rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors">
+              <svg width="24" height="24" viewBox="0 0 1043.63 592.71" fill="currentColor"><g><path d="M588.67 296.36c0 163.73-131.85 296.36-294.33 296.36S0 460.09 0 296.36 131.85 0 294.34 0s294.33 132.63 294.33 296.36z"/><path d="M911.23 296.36c0 154.96-65.93 280.64-147.27 280.64s-147.27-125.68-147.27-280.64S682.62 15.71 763.96 15.71s147.27 125.69 147.27 280.65z"/><path d="M1043.63 296.36c0 146.18-23.28 264.7-52 264.7s-52-118.52-52-264.7 23.28-264.7 52-264.7 52 118.52 52 264.7z"/></g></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">SERVICES</h3>
+          <ul class="space-y-2">
+            <li><a href="services.html" class="text-white/90 hover:text-white transition-colors text-sm">Accounting Services</a></li>
+            <li><a href="services.html" class="text-white/90 hover:text-white transition-colors text-sm">Tax Planning & Compliance</a></li>
+            <li><a href="services.html" class="text-white/90 hover:text-white transition-colors text-sm">Business Consultancy</a></li>
+            <li><a href="services.html" class="text-white/90 hover:text-white transition-colors text-sm">Financial Advisory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">DISCOVER</h3>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="text-white/90 hover:text-white transition-colors text-sm">About us</a></li>
+            <li><a href="contact.html" class="text-white/90 hover:text-white transition-colors text-sm">Contact us</a></li>
+            <li><a href="#" class="text-white/90 hover:text-white transition-colors text-sm">Terms & Conditions</a></li>
+            <li><a href="#" class="text-white/90 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#0f1816] py-7">
+      <div class="max-w-7xl mx-auto px-6 text-center text-white/85 text-xs">
+        Copyright ©2025 All rights reserved by
+        <a href="#" class="text-white hover:underline">K G BHUT & Associates</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
+
