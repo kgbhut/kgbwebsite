@@ -18,9 +18,12 @@
     <meta property="og:url" content="https://www.kgbhut.com/pages/contact.html" />
     <meta property="og:image" content="https://www.kgbhut.com/images/web/contact-hero.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Contact Us | K G Bhut &amp; Associates – CA Firm in Baner, Pune" />
-    <meta name="twitter:description" content="Contact K G Bhut &amp; Associates, Chartered Accountants in Baner, Pune, for GST, income tax, TDS, audit and company registration. Call +91 63555 61824 or send an enquiry." />
-    <meta name="twitter:image" content="https://www.kgbhut.com/images/web/contact-hero.webp" />
+    <meta name="twitter:title" content="Contact Us - K G Bhut & Associates" />
+    <meta
+      name="twitter:description"
+      content="Reach out to our consulting team for accounting, tax, compliance, and financial advisory services."
+    />
+    <meta name="twitter:image" content="https://www.kgbhut.com/images/contact-hero.jpg" />
     <link rel="icon" type="image/jpeg" href="../images/new-ca-logo.jpg" />
     <script type="application/ld+json">
     {
@@ -421,92 +424,42 @@
             (success ? "bg-green-50 text-green-800 border border-green-200" : "bg-red-50 text-red-800 border border-red-200");
         }
 
-        function markInvalid(el, invalid) {
-          el.classList.toggle("is-invalid", invalid);
-          el.setAttribute("aria-invalid", invalid ? "true" : "false");
-        }
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          msg.classList.add("hidden");
-
-          // Honeypot check (bots fill hidden fields) - silently drop
-          if ($("honeypot").value) return;
-
-          var lastSubmit = null;
-          try { lastSubmit = localStorage.getItem(RATE_LIMIT_KEY); } catch (err) {}
-          if (lastSubmit && Date.now() - parseInt(lastSubmit, 10) < RATE_LIMIT_MS) {
-            var remaining = Math.ceil((RATE_LIMIT_MS - (Date.now() - parseInt(lastSubmit, 10))) / 60000);
-            showMsg("Thank you, we have your enquiry. Please wait " + remaining + " minute" + (remaining > 1 ? "s" : "") + " before sending another.", false);
-            return;
-          }
-
-          var checks = [
-            [$("firstName"), function (v) { return v.trim(); }, "Please enter your first name."],
-            [$("lastName"), function (v) { return v.trim(); }, "Please enter your last name."],
-            [$("phone"), function (v) { return /^\d{10}$/.test(v.replace(/\D+/g, "").replace(/^91(?=\d{10}$)/, "")); }, "Please enter a valid 10-digit mobile number."],
-            [$("email"), function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }, "Please enter a valid email address."],
-            [$("service"), function (v) { return v; }, "Please select a service."],
-            [$("message"), function (v) { return v.trim(); }, "Please tell us briefly how we can help."],
-          ];
-          var firstError = null;
-          checks.forEach(function (c) {
-            var ok = !!c[1](c[0].value);
-            markInvalid(c[0], !ok);
-            if (!ok && !firstError) firstError = c;
-          });
-          if (!$("privacy").checked && !firstError) firstError = [$("privacy"), null, "Please confirm that we may contact you."];
-          if (firstError) {
-            showMsg(firstError[2], false);
-            firstError[0].focus();
-            return;
-          }
-
-          btn.disabled = true;
-          label.textContent = "Sending…";
-
-          var payload = {
-            token: "kgbhut2025",
-            honeypot: $("honeypot").value,
-            firstName: $("firstName").value.trim(),
-            lastName: $("lastName").value.trim(),
-            phone: $("phone").value.trim(),
-            email: $("email").value.trim(),
-            service: $("service").options[$("service").selectedIndex].text,
-            message: $("message").value.trim(),
-          };
-
-          fetch(BASE_URL, { method: "POST", mode: "no-cors", body: JSON.stringify(payload) })
-            .then(function () {
-              // no-cors returns an opaque response; assume success
-              try { localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString()); } catch (err) {}
-              form.reset();
-              showMsg("Thank you! Your enquiry has been sent. We will get back to you within one business day.", true);
-            })
-            .catch(function () {
-              showMsg("We couldn’t send your message. Please check your connection, or call us on +91 63555 61824.", false);
-            })
-            .finally(function () {
-              btn.disabled = false;
-              label.textContent = "Send enquiry";
-            });
-        });
-      })();
-    </script>
-
-    <footer class="site-footer">
-      <div class="mx-auto max-w-site px-4 sm:px-6 lg:px-8 pt-16 pb-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr,1fr,1fr,1.3fr]">
-        <div>
-          <a href="../index.html" class="flex items-center gap-3">
-            <span class="brand-mark"><img src="../images/web/logo.webp" alt="" width="40" height="37" class="w-10 h-auto" loading="lazy" /></span>
-            <span>
-              <span class="brand-name block !text-white">K G Bhut &amp; Associates</span>
-              <span class="brand-tag block">Chartered Accountants</span>
-            </span>
-          </a>
-          <p class="mt-5 leading-relaxed max-w-sm">
-            Accounting, taxation, audit and compliance services for individuals and
-            businesses, from our head office in Baner, Pune. Established 2017.
+            <div class="faq-item rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+              <button
+                class="faq-question w-full text-left flex justify-between items-center gap-4 px-5 py-4 text-base font-semibold text-gray-900 cursor-pointer focus:outline-none"
+              >
+                <span>What makes K G Bhut & Associates different?</span>
+                <svg class="w-5 h-5 flex-shrink-0 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-5 pt-2 pb-5">
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                  With 9+ years of experience and 500+ satisfied clients, we
+                  combine deep industry expertise with personalized service.
+                  Our team of qualified CAs and financial experts provides
+                  innovative solutions, leverages technology for efficiency,
+                  and maintains a client-centric approach that ensures 100%
+                  satisfaction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="mt-16 overflow-hidden bg-[#0f1816] pb-6">
+      <div class="bg-[#1a2e2a] text-white pt-12 pb-10 rounded-b-[4rem]">
+        <div
+          class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10"
+        >
+          <!-- About Us -->
+          <div>
+            <h3 class="text-gray-300 font-semibold text-sm uppercase tracking-wider mb-4">ABOUT US</h3>
+            <p class="mb-4 text-white/90 text-sm leading-relaxed">
+            K G Bhut & Associates is a leading accounting and business
+            consultancy firm providing comprehensive financial solutions since
+            2017.
           </p>
         </div>
         <div>
